@@ -27,7 +27,7 @@ if [[ $CURL_EXIT -ne 0 || $HTTP_CODE -ge 400 ]]; then
     # URL编码并发送通知（使用 --data-urlencode 自动处理编码）
     curl -G "$NOTICE_URL" \
          --data-urlencode "title=法国服务器证书文件下载失败!" \
-         --data-urlencode "desp=- HTTP状态码: ${HTTP_CODE},  CURL错误信息: ${CURL_ERROR},  服务器响应: ${RESPONSE_BODY"
+         --data-urlencode "desp=- HTTP状态码: ${HTTP_CODE},  CURL错误信息: ${CURL_ERROR},  服务器响应: ${RESPONSE_BODY}"
     
     exit 1  # 终止脚本
 else
