@@ -29,7 +29,7 @@ curl -X DELETE <https://your-worker.your-subdomain.workers.dev/filename.txt> -H 
 AUTH_KEY="your-auth-key"
 WORKER_URL="https://your-worker.your-subdomain.workers.dev"
 CERT_DIR="/cert"
-OUTPUT_FILE="certs_.tar.gz"
+OUTPUT_FILE="certs.tar.gz"
 ENCRYPT_KEY="your-encryption-key"
 
 # 1. 压缩并加密
