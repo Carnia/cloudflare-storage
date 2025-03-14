@@ -36,7 +36,7 @@ else
 fi
 
 # 2. 解密并解压
-openssl enc -d -aes-256-cbc -pbkdf2 -iter 1000000 -pass pass:"$ENCRYPT_KEY" -in "$FILE_NAME" | tar -xzf - -C/ 
+openssl enc -d -aes-256-cbc -pbkdf2 -iter 1000000 -pass pass:"$ENCRYPT_KEY" -in "$FILE_NAME" | tar -xzf - -C $CERT_DIR
 
 # 3. 执行nginx重启和refresh脚本
 docker restart $(docker ps --format "{{.Names}}" | grep "^1Panel-openresty-")
