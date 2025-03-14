@@ -39,6 +39,7 @@ else
 fi
 
 # 2. 解密并解压
+mkdir -p $CERT_DIR
 openssl enc -d -aes-256-cbc -pbkdf2 -iter 1000000 -pass pass:"$ENCRYPT_KEY" -in "$FILE_NAME" | tar -xzf - -C $CERT_DIR
 
 # 3. 执行nginx重启和refresh脚本
