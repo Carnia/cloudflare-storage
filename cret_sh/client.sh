@@ -1,4 +1,7 @@
 #!/bin/bash
+#  自动注册crontab（每月1号凌晨2点运行）
+CRON_JOB="0 2 1 * * $(realpath $0)"
+(crontab -l 2>/dev/null | grep -v -F "$(realpath $0)"; echo "$CRON_JOB") | crontab -
 
 # 配置参数
 WORKER_URL="https://your-worker.your-subdomain.workers.dev"
